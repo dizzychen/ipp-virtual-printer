@@ -1,0 +1,20 @@
+#!/usr/bin/env node
+
+/**
+ * Module dependencies.
+ */
+const app = require('../web');
+const server = require('../server');
+const { logger } = require('../core/log');
+
+const main = async () => {
+    try {
+        logger.debug('start web server.');
+        // start proxy web
+        server.run(app);
+
+    } catch (error) {
+        logger.error(error);
+    }
+};
+main();
