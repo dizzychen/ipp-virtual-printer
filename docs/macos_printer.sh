@@ -19,4 +19,4 @@ params=$(printf $userId-$driverType | base64)
 url=$host$params
 echo $url
 lpadmin -p "CloudPrinterPCL" -E -L "Local" -o Option1=true -o Duplex=DuplexNoTumble -D "[dev]Printer(黑白)" -v $url -m drv:///sample.drv/generpcl.ppd
-echo "Add ps printer success."
+echo "Add pcl printer success."
