@@ -1,0 +1,444 @@
+*PPD-Adobe: "4.3"
+*% Adobe Systems PostScript(R) Printer Description File
+*% Copyright 1995, 2001, 2003, Microsoft Corporation
+*% All rights reserved.
+*% Permission is granted for redistribution of this file as
+*% long as this copyright notice is intact and the contents
+*% of the file is not altered in any way from its original form.
+*%
+*% This PPD is designed to generate a composite CMYK
+*% PostScript file suitable for converting to a PDF file in a
+*% commercial printing workflow. It originally shipped with
+*% Microsoft Publisher version 11.
+*%
+*FormatVersion: "4.3"
+*FileVersion: "1.0"
+*PCFileName: "MSCOL11.PPD"
+*LanguageEncoding: ISOLatin1
+*LanguageVersion: English
+*Manufacturer: "Microsoft"
+*Product: "(Generic Color PS for Commercial Printing)"
+*PSVersion: "(3011.0) 0"
+*ModelName: "Generic Color PS for Commercial Printing"
+*NickName: "Generic Color PS for Commercial Printing"
+*ShortNickName: "Generic Color PS for Commercial Printing"
+
+*% ==== General Information and Defaults ================
+*FreeVM: "9992192"
+*VMOption None/Standard: "4194304"
+*FCacheSize None/Standard: 204800
+*LanguageLevel: "3"
+*ColorDevice: True
+*DefaultColorSpace: CMYK
+ 
+*FileSystem: True
+*?FileSystem: "(True) == flush"
+*Throughput: "400"
+*VariablePaperSize: True
+*TTRasterizer: Type42
+*?TTRasterizer: "(Type42) ="
+
+*% ==== Halftone, Resolution, Frequency, Angle ==========
+*OpenUI *Resolution: PickOne
+*OrderDependency: 50 AnySetup *Resolution
+*DefaultResolution: 1200dpi/Device Default
+*Resolution 1200dpi/Device Default: ""
+*CloseUI: *Resolution
+
+*ContoneOnly: False
+*DefaultHalftoneType: 1
+*ScreenFreq: "60.0"
+*ScreenAngle: "45.0"
+
+*DefaultTransfer: Null
+
+*AccurateScreensSupport: True
+
+
+*% ==== Paper Handling ===================================
+*% These are commonly used PageSize values
+*OpenUI *PageSize: PickOne
+*OrderDependency: 50 AnySetup *PageSize
+*DefaultPageSize: Letter
+*PageSize Letter: "
+  2 dict dup /PageSize [ 612  792] put dup /ImagingBBox null put
+setpagedevice"
+*End
+*PageSize Legal: "
+  2 dict dup /PageSize [ 612 1008] put dup /ImagingBBox null put
+setpagedevice"
+*End
+*PageSize Tabloid_11x17: "
+  2 dict dup /PageSize [ 792 1224] put dup /ImagingBBox null put
+setpagedevice"
+*End
+*PageSize A3: "
+  2 dict dup /PageSize [ 842 1191] put dup /ImagingBBox null put
+setpagedevice"
+*End
+*PageSize A4: "
+  2 dict dup /PageSize [ 595  842] put dup /ImagingBBox null put
+setpagedevice"
+*End
+*PageSize A5: "
+  2 dict dup /PageSize [ 420  595] put dup /ImagingBBox null put
+setpagedevice"
+*End
+*PageSize B4_JIS: " 
+  2 dict dup /PageSize [ 729 1032] put dup /ImagingBBox null put
+setpagedevice"
+*End
+*PageSize B5_JIS: " 
+  2 dict dup /PageSize [ 516  729] put dup /ImagingBBox null put
+setpagedevice"
+*End
+*PageSize ISO_B5: "
+  2 dict dup /PageSize [ 499  709] put dup /ImagingBBox null put
+setpagedevice"
+*End
+
+*?PageSize: " 
+ save 
+   currentpagedevice /PageSize get aload pop
+   2 copy gt {exch} if 
+   (Unknown) 
+   8 dict
+   dup [ 612  792] (Letter) put
+   dup [ 612 1008] (Legal) put
+   dup [ 792 1224] (Tabloid) put
+   dup [ 842 1191] (A3) put
+   dup [ 595  842] (A4) put
+   dup [ 420  595] (A5) put
+   dup [ 729 1032] (B4_JIS) put
+   dup [ 516  729] (B5_JIS) put
+   dup [ 499  709] (ISO_B5) put
+  { exch aload pop 4 index sub abs 5 le exch 
+    5 index sub abs 5 le and
+      { exch pop exit } { pop } ifelse
+   } bind forall 
+   = flush pop pop
+   restore
+"
+*End
+*CloseUI: *PageSize
+
+*% Always sets PageRegion = PageSize
+
+*OpenUI *PageRegion: PickOne
+*OrderDependency: 50 AnySetup *PageRegion
+*DefaultPageRegion: Letter
+*PageRegion Letter: "
+  2 dict dup /PageSize [ 612  792] put dup /ImagingBBox null put
+setpagedevice"
+*End
+*PageRegion Legal: "
+  2 dict dup /PageSize [ 612 1008] put dup /ImagingBBox null put
+setpagedevice"
+*End
+*PageRegion Tabloid_11x17: "
+  2 dict dup /PageSize [ 792 1224] put dup /ImagingBBox null put
+setpagedevice"
+*End
+*PageRegion A3: "
+  2 dict dup /PageSize [ 842 1191] put dup /ImagingBBox null put
+setpagedevice"
+*End
+*PageRegion A4: "
+  2 dict dup /PageSize [ 595  842] put dup /ImagingBBox null put
+setpagedevice"
+*End
+*PageRegion A5: "
+  2 dict dup /PageSize [ 420  595] put dup /ImagingBBox null put
+setpagedevice"
+*End
+*PageRegion B4_JIS: "
+  2 dict dup /PageSize [ 729 1032] put dup /ImagingBBox null put
+setpagedevice"
+*End
+*PageRegion B5_JIS: "
+  2 dict dup /PageSize [ 516  729] put dup /ImagingBBox null put
+setpagedevice"
+*End
+*PageRegion ISO_B5: "
+  2 dict dup /PageSize [ 499  709] put dup /ImagingBBox null put
+setpagedevice"
+*End
+*CloseUI: *PageRegion
+
+*% Always sets ImageableArea = PageSize
+
+*DefaultImageableArea: Letter
+*ImageableArea Letter: "0 0  612  792"
+*ImageableArea Legal: "0 0  612 1008"
+*ImageableArea Tabloid_11x17: "0 0  792 1224"
+*ImageableArea A3: "0 0  842 1191"
+*ImageableArea A4: "0 0  595  842"
+*ImageableArea A5: "0 0  420  595"
+*ImageableArea B4_JIS: "0 0  729 1032"
+*ImageableArea B5_JIS: "0 0  516  729"
+*ImageableArea ISO_B5: "0 0  499  709"
+
+*% Always sets PaperDimension = PageSize
+
+*DefaultPaperDimension: Letter
+*PaperDimension Letter: " 612 792"
+*PaperDimension Legal: " 612 1008"
+*PaperDimension Tabloid_11x17: " 792 1224"
+*PaperDimension A3: " 842 1190"
+*PaperDimension A4: " 595  842"
+*PaperDimension A5: " 420  595"
+*PaperDimension B4_JIS: " 729 1032"
+*PaperDimension B5_JIS: " 516  729"
+*PaperDimension ISO_B5: " 499  709"
+
+*% Custom Page Sizes
+*CustomPageSize True: "exch pop statusdict /setpageparams get exec"
+*End
+*ParamCustomPageSize Width: 1 points 0 14400
+*ParamCustomPageSize Height: 2 points 0 14400
+*ParamCustomPageSize WidthOffset: 3 points 0 14400
+*ParamCustomPageSize HeightOffset: 4 points 0 14400
+*ParamCustomPageSize Orientation: 5 int 0 3
+*MaxMediaWidth: "14400"
+*MaxMediaHeight: "14400"
+*CenterRegistered: False
+*LeadingEdge Forced: ""
+*DefaultLeadingEdge: Forced
+
+*% ==== Font Information =================================
+*?FontQuery: "
+ save
+   { count 1 gt
+      { exch dup 127 string cvs (/) print print (:) print
+        /Font resourcestatus {pop pop (Yes)} {(No)} ifelse =
+      } { exit } ifelse 
+   } bind loop
+   (*) = flush
+ restore
+"
+*End
+
+*?FontList: "
+save
+  (*) {cvn ==} 128 string /Font resourceforall
+  (*) = flush
+restore
+"
+*End
+
+
+*OpenGroup: General/General
+
+*OpenUI *PrintoutMode/Print Quality: PickOne
+*FoomaticRIPOption PrintoutMode: enum Composite A
+*OrderDependency: 10 AnySetup *PrintoutMode
+*DefaultPrintoutMode: Normal.Gray
+*PrintoutMode Draft/Draft: "%% FoomaticRIPOptionSetting: PrintoutMode=Draft"
+*FoomaticRIPOptionSetting PrintoutMode=Draft: "PrinterResolution=600x6&&
+00dpi ColorModel=Color"
+*End
+*PrintoutMode Draft.Gray/Draft Grayscale: "%% FoomaticRIPOptionSetting: PrintoutMode=Draft.Gray"
+*FoomaticRIPOptionSetting PrintoutMode=Draft.Gray: "PrinterResolution=&&
+600x600dpi ColorModel=Grayscale"
+*End
+*PrintoutMode Normal/Normal: "%% FoomaticRIPOptionSetting: PrintoutMode=Normal"
+*FoomaticRIPOptionSetting PrintoutMode=Normal: "PrinterResolution=600x&&
+600dpi ColorModel=Color"
+*End
+*PrintoutMode Normal.Gray/Normal Grayscale: "%% FoomaticRIPOptionSetting: PrintoutMode=Normal.Gray"
+*FoomaticRIPOptionSetting PrintoutMode=Normal.Gray: "PrinterResolution&&
+=600x600dpi ColorModel=Grayscale"
+*End
+*PrintoutMode High/High Quality: "%% FoomaticRIPOptionSetting: PrintoutMode=High"
+*FoomaticRIPOptionSetting PrintoutMode=High: "PrinterResolution=1200x1&&
+200dpi ColorModel=Color"
+*End
+*PrintoutMode High.Gray/High Quality Grayscale: "%% FoomaticRIPOptionSetting: PrintoutMode=High.Gray"
+*FoomaticRIPOptionSetting PrintoutMode=High.Gray: "PrinterResolution=1&&
+200x1200dpi ColorModel=Grayscale"
+*End
+*CloseUI: *PrintoutMode
+
+*OpenUI *PageSize/Page Size: PickOne
+*FoomaticRIPOption PageSize: enum CmdLine A
+*OrderDependency: 100 AnySetup *PageSize
+*DefaultPageSize: Letter
+*PageSize Letter/US Letter: "%% FoomaticRIPOptionSetting: PageSize=Letter"
+*FoomaticRIPOptionSetting PageSize=Letter: " -dDEVICEWIDTHPOINTS=612 -&&
+dDEVICEHEIGHTPOINTS=792"
+*End
+*PageSize A4/A4: "%% FoomaticRIPOptionSetting: PageSize=A4"
+*FoomaticRIPOptionSetting PageSize=A4: " -dDEVICEWIDTHPOINTS=595 -dDEV&&
+ICEHEIGHTPOINTS=842"
+*End
+*PageSize 11x17/11x17: "%% FoomaticRIPOptionSetting: PageSize=11x17"
+*FoomaticRIPOptionSetting PageSize=11x17: " -dDEVICEWIDTHPOINTS=792 -d&&
+DEVICEHEIGHTPOINTS=1224"
+*End
+*PageSize A3/A3: "%% FoomaticRIPOptionSetting: PageSize=A3"
+*FoomaticRIPOptionSetting PageSize=A3: " -dDEVICEWIDTHPOINTS=842 -dDEV&&
+ICEHEIGHTPOINTS=1191"
+*End
+*PageSize A5/A5: "%% FoomaticRIPOptionSetting: PageSize=A5"
+*FoomaticRIPOptionSetting PageSize=A5: " -dDEVICEWIDTHPOINTS=421 -dDEV&&
+ICEHEIGHTPOINTS=595"
+*End
+*PageSize B5/B5 (JIS): "%% FoomaticRIPOptionSetting: PageSize=B5"
+*FoomaticRIPOptionSetting PageSize=B5: " -dDEVICEWIDTHPOINTS=516 -dDEV&&
+ICEHEIGHTPOINTS=729"
+*End
+*PageSize Env10/Envelope #10: "%% FoomaticRIPOptionSetting: PageSize=Env10"
+*FoomaticRIPOptionSetting PageSize=Env10: " -dDEVICEWIDTHPOINTS=297 -d&&
+DEVICEHEIGHTPOINTS=684"
+*End
+*PageSize EnvC5/Envelope C5: "%% FoomaticRIPOptionSetting: PageSize=EnvC5"
+*FoomaticRIPOptionSetting PageSize=EnvC5: " -dDEVICEWIDTHPOINTS=459 -d&&
+DEVICEHEIGHTPOINTS=649"
+*End
+*PageSize EnvDL/Envelope DL: "%% FoomaticRIPOptionSetting: PageSize=EnvDL"
+*FoomaticRIPOptionSetting PageSize=EnvDL: " -dDEVICEWIDTHPOINTS=312 -d&&
+DEVICEHEIGHTPOINTS=624"
+*End
+*PageSize EnvISOB5/Envelope B5: "%% FoomaticRIPOptionSetting: PageSize=EnvISOB5"
+*FoomaticRIPOptionSetting PageSize=EnvISOB5: " -dDEVICEWIDTHPOINTS=499&&
+ -dDEVICEHEIGHTPOINTS=709"
+*End
+*PageSize EnvMonarch/Envelope Monarch: "%% FoomaticRIPOptionSetting: PageSize=EnvMonarch"
+*FoomaticRIPOptionSetting PageSize=EnvMonarch: " -dDEVICEWIDTHPOINTS=2&&
+79 -dDEVICEHEIGHTPOINTS=540"
+*End
+*PageSize Executive/Executive: "%% FoomaticRIPOptionSetting: PageSize=Executive"
+*FoomaticRIPOptionSetting PageSize=Executive: " -dDEVICEWIDTHPOINTS=52&&
+2 -dDEVICEHEIGHTPOINTS=756"
+*End
+*PageSize Legal/US Legal: "%% FoomaticRIPOptionSetting: PageSize=Legal"
+*FoomaticRIPOptionSetting PageSize=Legal: " -dDEVICEWIDTHPOINTS=612 -d&&
+DEVICEHEIGHTPOINTS=1008"
+*End
+*CloseUI: *PageSize
+
+*OpenUI *PageRegion: PickOne
+*OrderDependency: 100 AnySetup *PageRegion
+*DefaultPageRegion: Letter
+*PageRegion Letter/US Letter: "%% FoomaticRIPOptionSetting: PageSize=Letter"
+*PageRegion A4/A4: "%% FoomaticRIPOptionSetting: PageSize=A4"
+*PageRegion 11x17/11x17: "%% FoomaticRIPOptionSetting: PageSize=11x17"
+*PageRegion A3/A3: "%% FoomaticRIPOptionSetting: PageSize=A3"
+*PageRegion A5/A5: "%% FoomaticRIPOptionSetting: PageSize=A5"
+*PageRegion B5/B5 (JIS): "%% FoomaticRIPOptionSetting: PageSize=B5"
+*PageRegion Env10/Envelope #10: "%% FoomaticRIPOptionSetting: PageSize=Env10"
+*PageRegion EnvC5/Envelope C5: "%% FoomaticRIPOptionSetting: PageSize=EnvC5"
+*PageRegion EnvDL/Envelope DL: "%% FoomaticRIPOptionSetting: PageSize=EnvDL"
+*PageRegion EnvISOB5/Envelope B5: "%% FoomaticRIPOptionSetting: PageSize=EnvISOB5"
+*PageRegion EnvMonarch/Envelope Monarch: "%% FoomaticRIPOptionSetting: PageSize=EnvMonarch"
+*PageRegion Executive/Executive: "%% FoomaticRIPOptionSetting: PageSize=Executive"
+*PageRegion Legal/US Legal: "%% FoomaticRIPOptionSetting: PageSize=Legal"
+*CloseUI: *PageRegion
+
+*DefaultImageableArea: Letter
+*ImageableArea Letter/US Letter: "18 36 594 756"
+*ImageableArea A4/A4: "18 36 577 806"
+*ImageableArea 11x17/11x17: "18 36 774 1188"
+*ImageableArea A3/A3: "18 36 824 1155"
+*ImageableArea A5/A5: "18 36 403 559"
+*ImageableArea B5/B5 (JIS): "18 36 498 693"
+*ImageableArea Env10/Envelope #10: "18 36 279 648"
+*ImageableArea EnvC5/Envelope C5: "18 36 441 613"
+*ImageableArea EnvDL/Envelope DL: "18 36 294 588"
+*ImageableArea EnvISOB5/Envelope B5: "18 36 481 673"
+*ImageableArea EnvMonarch/Envelope Monarch: "18 36 261 504"
+*ImageableArea Executive/Executive: "18 36 504 720"
+*ImageableArea Legal/US Legal: "18 36 594 972"
+
+*DefaultPaperDimension: Letter
+*PaperDimension Letter/US Letter: "612 792"
+*PaperDimension A4/A4: "595 842"
+*PaperDimension 11x17/11x17: "792 1224"
+*PaperDimension A3/A3: "842 1191"
+*PaperDimension A5/A5: "421 595"
+*PaperDimension B5/B5 (JIS): "516 729"
+*PaperDimension Env10/Envelope #10: "297 684"
+*PaperDimension EnvC5/Envelope C5: "459 649"
+*PaperDimension EnvDL/Envelope DL: "312 624"
+*PaperDimension EnvISOB5/Envelope B5: "499 709"
+*PaperDimension EnvMonarch/Envelope Monarch: "279 540"
+*PaperDimension Executive/Executive: "522 756"
+*PaperDimension Legal/US Legal: "612 1008"
+
+*OpenUI *InputSlot/Media Source: PickOne
+*FoomaticRIPOption InputSlot: enum CmdLine A
+*OrderDependency: 100 AnySetup *InputSlot
+*DefaultInputSlot: Default
+*InputSlot Default/Printer Default: "%% FoomaticRIPOptionSetting: InputSlot=Default"
+*FoomaticRIPOptionSetting InputSlot=Default: " -dMediaPosition=0"
+*InputSlot Upper/Upper Tray: "%% FoomaticRIPOptionSetting: InputSlot=Upper"
+*FoomaticRIPOptionSetting InputSlot=Upper: " -dMediaPosition=4"
+*InputSlot Middle/Middle Tray: "%% FoomaticRIPOptionSetting: InputSlot=Middle"
+*FoomaticRIPOptionSetting InputSlot=Middle: " -dMediaPosition=5"
+*InputSlot Lower/Lower Tray: "%% FoomaticRIPOptionSetting: InputSlot=Lower"
+*FoomaticRIPOptionSetting InputSlot=Lower: " -dMediaPosition=6"
+*InputSlot Multipurpose/Multipurpose Tray: "%% FoomaticRIPOptionSetting: InputSlot=Multipurpose"
+*FoomaticRIPOptionSetting InputSlot=Multipurpose: " -dMediaPosition=3"
+*InputSlot Automatic/Automatic: "%% FoomaticRIPOptionSetting: InputSlot=Automatic"
+*FoomaticRIPOptionSetting InputSlot=Automatic: " -dMediaPosition=1"
+*InputSlot Manual/Manual Feeder: "%% FoomaticRIPOptionSetting: InputSlot=Manual"
+*FoomaticRIPOptionSetting InputSlot=Manual: " -dMediaPosition=2"
+*CloseUI: *InputSlot
+
+*OpenUI *Duplex/Double-Sided Printing: PickOne
+*FoomaticRIPOption Duplex: enum CmdLine A
+*OrderDependency: 100 AnySetup *Duplex
+*DefaultDuplex: None
+*Duplex DuplexNoTumble/On (Flip on Long Edge): "%% FoomaticRIPOptionSetting: Duplex=DuplexNoTumble"
+*FoomaticRIPOptionSetting Duplex=DuplexNoTumble: " -dDuplex"
+*Duplex DuplexTumble/On (Flip on Short Edge): "%% FoomaticRIPOptionSetting: Duplex=DuplexTumble"
+*FoomaticRIPOptionSetting Duplex=DuplexTumble: " -dDuplex -dTumble"
+*Duplex None/Off: "%% FoomaticRIPOptionSetting: Duplex=None"
+*FoomaticRIPOptionSetting Duplex=None: ""
+*CloseUI: *Duplex
+
+*CloseGroup: General
+
+*OpenGroup: PrintoutMode/Printout Mode
+
+*OpenUI *ColorModel/Color Mode: PickOne
+*FoomaticRIPOption ColorModel: enum CmdLine B
+*OrderDependency: 100 AnySetup *ColorModel
+*DefaultColorModel: FromPrintoutMode
+*ColorModel FromPrintoutMode/Controlled by 'Print Quality': "%% FoomaticRIPOptionSetting: ColorModel=@PrintoutMode"
+*ColorModel Color/Color: "%% FoomaticRIPOptionSetting: ColorModel=Color"
+*FoomaticRIPOptionSetting ColorModel=Color: " -sDEVICE=pxlcolor"
+*ColorModel Grayscale/Monochrome: "%% FoomaticRIPOptionSetting: ColorModel=Grayscale"
+*FoomaticRIPOptionSetting ColorModel=Grayscale: " -sDEVICE=pxlmono"
+*CloseUI: *ColorModel
+
+*OpenUI *PrinterResolution/Resolution: PickOne
+*FoomaticRIPOption PrinterResolution: enum CmdLine A
+*OrderDependency: 100 AnySetup *PrinterResolution
+*DefaultPrinterResolution: FromPrintoutMode
+*PrinterResolution FromPrintoutMode/Controlled by 'Print Quality': "%% FoomaticRIPOptionSetting: PrinterResolution=@PrintoutMode"
+*PrinterResolution 300x300dpi/300x300 DPI: "%% FoomaticRIPOptionSetting: PrinterResolution=300x300dpi"
+*FoomaticRIPOptionSetting PrinterResolution=300x300dpi: " -r300x300"
+*PrinterResolution 600x600dpi/600x600 DPI: "%% FoomaticRIPOptionSetting: PrinterResolution=600x600dpi"
+*FoomaticRIPOptionSetting PrinterResolution=600x600dpi: " -r600x600"
+*PrinterResolution 1200x600dpi/1200x600 DPI: "%% FoomaticRIPOptionSetting: PrinterResolution=1200x600dpi"
+*FoomaticRIPOptionSetting PrinterResolution=1200x600dpi: " -r1200x600"
+*PrinterResolution 1200x1200dpi/1200x1200 DPI: "%% FoomaticRIPOptionSetting: PrinterResolution=1200x1200dpi"
+*FoomaticRIPOptionSetting PrinterResolution=1200x1200dpi: " -r1200x120&&
+0"
+*End
+*CloseUI: *PrinterResolution
+
+*CloseGroup: PrintoutMode
+
+*% Base fonts
+*DefaultFont: Courier
+*Font Courier: Standard "(004.000)" Standard ROM
+*Font Courier-Bold: Standard "(004.000)" Standard ROM
+*Font Courier-BoldOblique: Standard "(004.000)" Standard ROM
+*Font Courier-Oblique: Standard "(004.000)" Standard ROM
+*Font Symbol: Special "(001.008)" Special ROM
+*Font ZapfDingbats: Special "(002.000)" Special ROM
+
+*% end of PPD file for Generic Color PS for Commercial Printing
+

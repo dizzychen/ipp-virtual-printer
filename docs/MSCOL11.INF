@@ -1,0 +1,92 @@
+; Copyright (c) 2003 Microsoft Corp.
+;
+; MSCOL11.INF - Installer file for MSCOL11.PPD, a printer file
+; for Generic Color PS for Commercial Printing
+
+; [Version] section is the standard header for all INF files. 
+; The signature string is not case sensitive, but must be $Chicago$. 
+; The CatalogFile is the certificate provided by Windows Hardware 
+; Quality Lab.
+
+[Version]
+Signature="$Windows NT$"
+Provider=%OEM%
+ClassGUID={4D36E979-E325-11CE-BFC1-08002BE10318}
+Class=Printer
+CatalogFile=OEMPRINT.cat
+; Date & version of driver package
+DriverVer=01/04/2010,11.00.46.28
+
+[ClassInstall32.ntx86]
+AddReg=printer_class_addreg
+
+[ClassInstall32.ntamd64]
+AddReg=printer_class_addreg
+
+[printer_class_addreg]
+HKR,,,,%PrinterClassName%
+HKR,,Icon,,"-4"
+HKR,,Installer32,,"ntprint.dll,ClassInstall32"
+HKR,,NoDisplayClass,,1
+HKR,,EnumPropPages32,,"printui.dll,PrinterPropPageProvider"
+
+; [Manufacturer] section lists all of the manufacturers to be 
+; displayed in the Add Printer dialog.
+
+[Manufacturer]
+"Generic" = Generic,ntamd64
+
+; Each [Model] section below corresponds with an entry listed in the
+; Manufacturer section above. The models will display in the order
+; that they appear in this INF file.
+
+[Generic]
+"Generic Color PS for Commercial Printing"               = MSCOL11.PPD, Generic_Color_PS,Generic_Color_PS_for_Commercial_Printing
+
+[Generic.ntamd64]
+"Generic Color PS for Commercial Printing"               = MSCOL11.PPD, Generic_Color_PS,Generic_Color_PS_for_Commercial_Printing
+
+; [Installer] section controls file installation, and reference all 
+; files that need to be copied. The section name will be assumed to 
+; be the driver file, unless there is an explicit DriverFile section 
+; listed.
+
+[MSCOL11.PPD]
+CopyFiles=@MSCOL11.PPD
+DataSection=PSCRIPT_DATA
+Include=NTPRINT.INF
+Needs=PSCRIPT.OEM
+
+; [Data] section lists all the data files used.
+; None, included in Installer section above.
+
+; [Copy] section lists all the files to copy.
+; None, included in Installer section above using @filename notation.
+
+; Call SetupSetDirectoryId with 66000 to set the target directory at 
+; runtime (depending on which environment drivers are getting installed)
+
+[DestinationDirs]
+DefaultDestDir=66000
+
+[SourceDisksNames.x86]
+1   = %Disk1%,,,""
+
+[SourceDisksNames.amd64]
+1   = %Disk1%,,,""
+
+[SourceDisksNames.Alpha]
+1   = %Disk1%,,,""
+
+[SourceDisksFiles]
+MSCOL11.inf  =1
+MSCOL11.ppd  =1
+
+; [Strings] section contains localizable strings
+
+[Strings]
+OEM="Microsoft"
+PrinterClassName="Printers"
+Disk1="OEM Driver Setup Disk 1"
+
+; End of MSCOL11.INF

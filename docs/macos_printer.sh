@@ -4,7 +4,7 @@ else
     userId=$1
 fi
 
-host="http://127.0.0.1:8899/printer/"
+host="http://127.0.0.1:8899/printer"
 
 driverType="ps"
 params=$(printf $userId-$driverType | base64)
